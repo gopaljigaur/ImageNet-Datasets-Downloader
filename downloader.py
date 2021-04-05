@@ -29,14 +29,14 @@ def main():
     args, args_other = parser.parse_known_args()
 
     if args.debug:
-        logging.basicConfig(filename='imagenet_scarper.log', level=logging.DEBUG)
+        logging.basicConfig(filename='imagenet_scraper.log', level=logging.DEBUG)
 
     if len(args.data_root) == 0:
         logging.error("-data_root is required to run downloader!")
         exit()
 
     def imagenet_api_wnid_to_urls(wnid):
-        return f'http://www.image-net.org/api/text/imagenet.synset.geturls?wnid={wnid}'
+        return f'http://www.image-net.org/api/imagenet.synset.geturls?wnid={wnid}'
 
     current_folder = os.path.dirname(os.path.realpath(__file__))
 
